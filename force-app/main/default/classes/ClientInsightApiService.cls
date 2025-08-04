@@ -129,10 +129,10 @@ public class ClientInsightApiService extends InsightApiServiceBase  implements I
             // Address Mapping (Primary Address)
             acc.BillingStreet = String.ValueOf(clientMap.get('AddressLine1'));
             acc.Billingcity = String.ValueOf(clientMap.get('City'));
-            acc.Billingstate = String.ValueOf(clientMap.get('Suburb'));
+           // acc.Billingstate = String.ValueOf(clientMap.get('Suburb')); 
             acc.BillingpostalCode = String.ValueOf(clientMap.get('Postcode'));
             acc.Billingcountry = String.ValueOf(clientMap.get('CountryName'));
-            acc.BillingState = String.ValueOf(clientMap.get('StateName'));
+            acc.BillingStateCode  = String.ValueOf(clientMap.get('StateName'));   
             acc.Sic = String.ValueOf(clientMap.get('StandardIndustryCode'));
             acc.Compliance_Type__c = String.ValueOf(clientMap.get('ComplianceTypeName'));
             acc.Classification__c = String.ValueOf(clientMap.get('ClassificationName'));
@@ -141,6 +141,8 @@ public class ClientInsightApiService extends InsightApiServiceBase  implements I
             acc.Service_Team__c =         String.ValueOf(clientMap.get('ServiceTeamName'));
             acc.Classification__c     =  String.ValueOf(clientMap.get('ClassificationName'));
             acc.Compliance_Type__c   =  String.ValueOf(clientMap.get('ComplianceTypeName'));
+            acc.Current_State__c  =  Integer.ValueOf(clientMap.get('CurrentStatusId')) == 0 ? 'Current' : 'Not Current' ;
+            acc.Account_Type__c  = Integer.ValueOf(clientMap.get('ClientTypeId')) == 0 ? 'Client' : 'Prospect';
             system.debug('IndustryId'+clientMap.get('IndustryId'));
             if(clientMap.get('IndustryId') != null)
                 acc.Industry           = ReferenceMetadataUtility.getIdtoPicklistText('Industry', Integer.ValueOf(clientMap.get('IndustryId')));
@@ -171,7 +173,7 @@ public class ClientInsightApiService extends InsightApiServiceBase  implements I
                                      Legal_Entity_Type__c, Sic,Insight_Id__c,Area__c,Sales_Team__c,Service_Team__c,
                                      Insight_Updated_Who__c, Insight_Updated_When__c,Get_JSON_Response__c,
                                      Client_Category_1__c,Client_Category_3__c,Account_Type__c,
-                                     BillingStreet, Billingcity, Billingstate, Billingcountry,BillingpostalCode
+                                     BillingStreet, Billingcity, Billingstate, Billingcountry,BillingpostalCode,Current_State__c
                                      FROM Account
                                      WHERE Id = :accountId];
         
@@ -191,7 +193,7 @@ public class ClientInsightApiService extends InsightApiServiceBase  implements I
             // 0 = Client, // 1 = Prospect
             clientRequest.ClientTypeId = client.Account_Type__c == 'Client' ? 0 : 1; 
             //0 = Current (Active) client , 1 = Non Current (Inactive) client.
-            clientRequest.CurrentStatusId = 0;
+            clientRequest.CurrentStatusId = client.Current_State__c == 'Current' ? 0 : 1; 
             clientRequest.TradingAs = client.Trading_As__c;
             clientRequest.Ref = client.Reference_Code__c;
             clientRequest.ABN = client.ABN__c;
