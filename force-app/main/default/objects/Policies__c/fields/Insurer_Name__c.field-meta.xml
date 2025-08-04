@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Insurer_Name__c</fullName>
+    <description>Field to capture Insurer Name of the policy</description>
+    <label>Insurer Name</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>360S</fullName>
+                <default>false</default>
+                <label>360S</label>
+            </value>
+            <value>
+                <fullName>Ag Guard Pty Ltd</fullName>
+                <default>false</default>
+                <label>Ag Guard Pty Ltd</label>
+            </value>
+            <value>
+                <fullName>ALLI - ALLIANZ</fullName>
+                <default>false</default>
+                <label>ALLI - ALLIANZ</label>
+            </value>
+            <value>
+                <fullName>CALLIDEN - AU</fullName>
+                <default>false</default>
+                <label>CALLIDEN - AU</label>
+            </value>
+            <value>
+                <fullName>CALLIDEN - CALLIDEN</fullName>
+                <default>false</default>
+                <label>CALLIDEN - CALLIDEN</label>
+            </value>
+            <value>
+                <fullName>CALLIDENAG - CALLIDEN</fullName>
+                <default>false</default>
+                <label>CALLIDENAG - CALLIDEN</label>
+            </value>
+            <value>
+                <fullName>CGU - CGU</fullName>
+                <default>false</default>
+                <label>CGU - CGU</label>
+            </value>
+            <value>
+                <fullName>CHARTIS - CHARTIS</fullName>
+                <default>false</default>
+                <label>CHARTIS - CHARTIS</label>
+            </value>
+            <value>
+                <fullName>Chubb Insurance</fullName>
+                <default>false</default>
+                <label>Chubb Insurance</label>
+            </value>
+            <value>
+                <fullName>CLUB - ALLIANZ</fullName>
+                <default>false</default>
+                <label>CLUB - ALLIANZ</label>
+            </value>
+            <value>
+                <fullName>GREATLAKES - CALIBRE</fullName>
+                <default>false</default>
+                <label>GREATLAKES - CALIBRE</label>
+            </value>
+            <value>
+                <fullName>Hutch Underwriting</fullName>
+                <default>false</default>
+                <label>Hutch Underwriting</label>
+            </value>
+            <value>
+                <fullName>IBNA - ZURICH</fullName>
+                <default>false</default>
+                <label>IBNA - ZURICH</label>
+            </value>
+            <value>
+                <fullName>LUMLEY - LUMLEY</fullName>
+                <default>false</default>
+                <label>LUMLEY - LUMLEY</label>
+            </value>
+            <value>
+                <fullName>NTI - NTI</fullName>
+                <default>false</default>
+                <label>NTI - NTI</label>
+            </value>
+            <value>
+                <fullName>Probitas 1492</fullName>
+                <default>false</default>
+                <label>Probitas 1492</label>
+            </value>
+            <value>
+                <fullName>QBE - QBEMM</fullName>
+                <default>false</default>
+                <label>QBE - QBEMM</label>
+            </value>
+            <value>
+                <fullName>SGUAS</fullName>
+                <default>false</default>
+                <label>SGUAS</label>
+            </value>
+            <value>
+                <fullName>TravelCard</fullName>
+                <default>false</default>
+                <label>TravelCard</label>
+            </value>
+            <value>
+                <fullName>VERO - ROYALSUN</fullName>
+                <default>false</default>
+                <label>VERO - ROYALSUN</label>
+            </value>
+            <value>
+                <fullName>VERO - VERO</fullName>
+                <default>false</default>
+                <label>VERO - VERO</label>
+            </value>
+            <value>
+                <fullName>ZURI - ZURICH</fullName>
+                <default>false</default>
+                <label>ZURI - ZURICH</label>
+            </value>
+            <value>
+                <fullName>AIG Australia Limited</fullName>
+                <default>false</default>
+                <label>AIG Australia Limited</label>
+            </value>
+            <value>
+                <fullName>Blue Zebra Insurance Pty Ltd</fullName>
+                <default>false</default>
+                <label>Blue Zebra Insurance Pty Ltd</label>
+            </value>
+            <value>
+                <fullName>AIG Australia Limited (Insurance)</fullName>
+                <default>false</default>
+                <label>AIG Australia Limited (Insurance)</label>
+            </value>
+            <value>
+                <fullName>Protecsure Pty Ltd (for Chubb)</fullName>
+                <default>false</default>
+                <label>Protecsure Pty Ltd (for Chubb)</label>
+            </value>
+            <value>
+                <fullName>Insurance Australia Limited (T/as CGU)</fullName>
+                <default>false</default>
+                <label>Insurance Australia Limited (T/as CGU)</label>
+            </value>
+            <value>
+                <fullName>Allianz Australia Limited</fullName>
+                <default>false</default>
+                <label>Allianz Australia Limited</label>
+            </value>
+            <value>
+                <fullName>Dawes Motor Insurance</fullName>
+                <default>false</default>
+                <label>Dawes Motor Insurance</label>
+            </value>
+            <value>
+                <fullName>Vero Insurance Limited</fullName>
+                <default>false</default>
+                <label>Vero Insurance Limited</label>
+            </value>
+            <value>
+                <fullName>Global Transport &amp; Automotive Ins. Solutions</fullName>
+                <default>false</default>
+                <label>Global Transport &amp; Automotive Ins. Solutions</label>
+            </value>
+            <value>
+                <fullName>Default SVU Insurer</fullName>
+                <default>false</default>
+                <label>Default SVU Insurer</label>
+            </value>
+            <value>
+                <fullName>Liberty Specialty Markets</fullName>
+                <default>false</default>
+                <label>Liberty Specialty Markets</label>
+            </value>
+            <value>
+                <fullName>QBE INSURANCE LIMITED</fullName>
+                <default>false</default>
+                <label>QBE INSURANCE LIMITED</label>
+            </value>
+            <value>
+                <fullName>Zurich Insurance Ltd</fullName>
+                <default>false</default>
+                <label>Zurich Insurance Ltd</label>
+            </value>
+            <value>
+                <fullName>Berkshire Hathaway Specialty Insurance Australia</fullName>
+                <default>false</default>
+                <label>Berkshire Hathaway Specialty Insurance Australia</label>
+            </value>
+            <value>
+                <fullName>AIB Pty Ltd</fullName>
+                <default>false</default>
+                <label>AIB Pty Ltd</label>
+            </value>
+            <value>
+                <fullName>Haven Underwriting</fullName>
+                <default>false</default>
+                <label>Haven Underwriting</label>
+            </value>
+            <value>
+                <fullName>The Hollard Insurance Company Pty Ltd (Personal Insurance)</fullName>
+                <default>false</default>
+                <label>The Hollard Insurance Company Pty Ltd (Personal Insurance)</label>
+            </value>
+            <value>
+                <fullName>National Transport Ins</fullName>
+                <default>false</default>
+                <label>National Transport Ins</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

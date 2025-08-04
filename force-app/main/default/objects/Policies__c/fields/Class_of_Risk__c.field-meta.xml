@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Class_of_Risk__c</fullName>
+    <description>Field to capture Class of Risk of policy</description>
+    <label>Class of Risk</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Association Liability</fullName>
+                <default>false</default>
+                <label>Association Liability</label>
+            </value>
+            <value>
+                <fullName>Aviation Liability</fullName>
+                <default>false</default>
+                <label>Aviation Liability</label>
+            </value>
+            <value>
+                <fullName>Aviation/Hull Insurance</fullName>
+                <default>false</default>
+                <label>Aviation/Hull Insurance</label>
+            </value>
+            <value>
+                <fullName>Bloodstock Insurance</fullName>
+                <default>false</default>
+                <label>Bloodstock Insurance</label>
+            </value>
+            <value>
+                <fullName>Business Insurance</fullName>
+                <default>false</default>
+                <label>Business Insurance</label>
+            </value>
+            <value>
+                <fullName>Caravan Insurance</fullName>
+                <default>false</default>
+                <label>Caravan Insurance</label>
+            </value>
+            <value>
+                <fullName>Carriers Liability</fullName>
+                <default>false</default>
+                <label>Carriers Liability</label>
+            </value>
+            <value>
+                <fullName>Consequential Loss</fullName>
+                <default>false</default>
+                <label>Consequential Loss</label>
+            </value>
+            <value>
+                <fullName>Contract Machinery Insurance</fullName>
+                <default>false</default>
+                <label>Contract Machinery Insurance</label>
+            </value>
+            <value>
+                <fullName>Contract Works Single</fullName>
+                <default>false</default>
+                <label>Contract Works Single</label>
+            </value>
+            <value>
+                <fullName>Contractors All Risk Insurance</fullName>
+                <default>false</default>
+                <label>Contractors All Risk Insurance</label>
+            </value>
+            <value>
+                <fullName>Crime Insurance (Fidelity)</fullName>
+                <default>false</default>
+                <label>Crime Insurance (Fidelity)</label>
+            </value>
+            <value>
+                <fullName>Cyber Liability</fullName>
+                <default>false</default>
+                <label>Cyber Liability</label>
+            </value>
+            <value>
+                <fullName>Delay in Start Up</fullName>
+                <default>false</default>
+                <label>Delay in Start Up</label>
+            </value>
+            <value>
+                <fullName>Directors &amp; Officers Liability</fullName>
+                <default>false</default>
+                <label>Directors &amp; Officers Liability</label>
+            </value>
+            <value>
+                <fullName>Directors &amp; Officers Liability (Excess)</fullName>
+                <default>false</default>
+                <label>Directors &amp; Officers Liability (Excess)</label>
+            </value>
+            <value>
+                <fullName>Electronic Equipment</fullName>
+                <default>false</default>
+                <label>Electronic Equipment</label>
+            </value>
+            <value>
+                <fullName>Employment Practices Insurance</fullName>
+                <default>false</default>
+                <label>Employment Practices Insurance</label>
+            </value>
+            <value>
+                <fullName>Equestrian Cover</fullName>
+                <default>false</default>
+                <label>Equestrian Cover</label>
+            </value>
+            <value>
+                <fullName>Expat Insurance</fullName>
+                <default>false</default>
+                <label>Expat Insurance</label>
+            </value>
+            <value>
+                <fullName>Fee (Broker)</fullName>
+                <default>false</default>
+                <label>Fee (Broker)</label>
+            </value>
+            <value>
+                <fullName>Fee (placement)</fullName>
+                <default>false</default>
+                <label>Fee (placement)</label>
+            </value>
+            <value>
+                <fullName>Fee (Survey Risk Management)</fullName>
+                <default>false</default>
+                <label>Fee (Survey Risk Management)</label>
+            </value>
+            <value>
+                <fullName>Fee (Workers Compensation)</fullName>
+                <default>false</default>
+                <label>Fee (Workers Compensation)</label>
+            </value>
+            <value>
+                <fullName>Freight Forwarders Liability</fullName>
+                <default>false</default>
+                <label>Freight Forwarders Liability</label>
+            </value>
+            <value>
+                <fullName>General Property Insurance</fullName>
+                <default>false</default>
+                <label>General Property Insurance</label>
+            </value>
+            <value>
+                <fullName>Householders Insurance</fullName>
+                <default>false</default>
+                <label>Householders Insurance</label>
+            </value>
+            <value>
+                <fullName>Industrial Special Risks Crime Split</fullName>
+                <default>false</default>
+                <label>Industrial Special Risks Crime Split</label>
+            </value>
+            <value>
+                <fullName>Industrial Special Risks Insurance</fullName>
+                <default>false</default>
+                <label>Industrial Special Risks Insurance</label>
+            </value>
+            <value>
+                <fullName>Industrial Special Risks Insurance - OS</fullName>
+                <default>false</default>
+                <label>Industrial Special Risks Insurance - OS</label>
+            </value>
+            <value>
+                <fullName>Inpat Insurance</fullName>
+                <default>false</default>
+                <label>Inpat Insurance</label>
+            </value>
+            <value>
+                <fullName>Instant Profits</fullName>
+                <default>false</default>
+                <label>Instant Profits</label>
+            </value>
+            <value>
+                <fullName>Jewellers Insurance</fullName>
+                <default>false</default>
+                <label>Jewellers Insurance</label>
+            </value>
+            <value>
+                <fullName>Journey Insurance</fullName>
+                <default>false</default>
+                <label>Journey Insurance</label>
+            </value>
+            <value>
+                <fullName>Kidnap &amp; Ransom Insurance</fullName>
+                <default>false</default>
+                <label>Kidnap &amp; Ransom Insurance</label>
+            </value>
+            <value>
+                <fullName>Landlords Insurance</fullName>
+                <default>false</default>
+                <label>Landlords Insurance</label>
+            </value>
+            <value>
+                <fullName>Legal Expenses</fullName>
+                <default>false</default>
+                <label>Legal Expenses</label>
+            </value>
+            <value>
+                <fullName>Liability (Asbestos)</fullName>
+                <default>false</default>
+                <label>Liability (Asbestos)</label>
+            </value>
+            <value>
+                <fullName>Liability (Combined Liability &amp; PI)</fullName>
+                <default>false</default>
+                <label>Liability (Combined Liability &amp; PI)</label>
+            </value>
+            <value>
+                <fullName>Liability (Environment Pollution)</fullName>
+                <default>false</default>
+                <label>Liability (Environment Pollution)</label>
+            </value>
+            <value>
+                <fullName>Liability (Excess)</fullName>
+                <default>false</default>
+                <label>Liability (Excess)</label>
+            </value>
+            <value>
+                <fullName>Liability (Information Technology)</fullName>
+                <default>false</default>
+                <label>Liability (Information Technology)</label>
+            </value>
+            <value>
+                <fullName>Liability (Public)</fullName>
+                <default>false</default>
+                <label>Liability (Public)</label>
+            </value>
+            <value>
+                <fullName>Liability (Umbrella)</fullName>
+                <default>false</default>
+                <label>Liability (Umbrella)</label>
+            </value>
+            <value>
+                <fullName>Life Sciences (PI &amp; Liability)</fullName>
+                <default>false</default>
+                <label>Life Sciences (PI &amp; Liability)</label>
+            </value>
+            <value>
+                <fullName>Machinery Breakdown</fullName>
+                <default>false</default>
+                <label>Machinery Breakdown</label>
+            </value>
+            <value>
+                <fullName>Management Liability</fullName>
+                <default>false</default>
+                <label>Management Liability</label>
+            </value>
+            <value>
+                <fullName>Media Insurance</fullName>
+                <default>false</default>
+                <label>Media Insurance</label>
+            </value>
+            <value>
+                <fullName>Medical Malpractice Combined Liability</fullName>
+                <default>false</default>
+                <label>Medical Malpractice Combined Liability</label>
+            </value>
+            <value>
+                <fullName>Motor Cycle Insurance</fullName>
+                <default>false</default>
+                <label>Motor Cycle Insurance</label>
+            </value>
+            <value>
+                <fullName>Motor Vehicle (Commercial)</fullName>
+                <default>false</default>
+                <label>Motor Vehicle (Commercial)</label>
+            </value>
+            <value>
+                <fullName>Motor Vehicle (Farm)</fullName>
+                <default>false</default>
+                <label>Motor Vehicle (Farm)</label>
+            </value>
+            <value>
+                <fullName>Motor Vehicle (Fleet)</fullName>
+                <default>false</default>
+                <label>Motor Vehicle (Fleet)</label>
+            </value>
+            <value>
+                <fullName>Motor Vehicle (Retail)</fullName>
+                <default>false</default>
+                <label>Motor Vehicle (Retail)</label>
+            </value>
+            <value>
+                <fullName>Office Insurance</fullName>
+                <default>false</default>
+                <label>Office Insurance</label>
+            </value>
+            <value>
+                <fullName>Owner Builder Contract Works</fullName>
+                <default>false</default>
+                <label>Owner Builder Contract Works</label>
+            </value>
+            <value>
+                <fullName>Owner Builder Liability</fullName>
+                <default>false</default>
+                <label>Owner Builder Liability</label>
+            </value>
+            <value>
+                <fullName>Owner Builder Personal Accident</fullName>
+                <default>false</default>
+                <label>Owner Builder Personal Accident</label>
+            </value>
+            <value>
+                <fullName>Owner Builder Workers Comp</fullName>
+                <default>false</default>
+                <label>Owner Builder Workers Comp</label>
+            </value>
+            <value>
+                <fullName>PA Personal Accident</fullName>
+                <default>false</default>
+                <label>PA Personal Accident</label>
+            </value>
+            <value>
+                <fullName>Padlock Insurance</fullName>
+                <default>false</default>
+                <label>Padlock Insurance</label>
+            </value>
+            <value>
+                <fullName>Pleasure Craft/Marine Hull</fullName>
+                <default>false</default>
+                <label>Pleasure Craft/Marine Hull</label>
+            </value>
+            <value>
+                <fullName>Product Recall</fullName>
+                <default>false</default>
+                <label>Product Recall</label>
+            </value>
+            <value>
+                <fullName>Professional Indemnity (Excess)</fullName>
+                <default>false</default>
+                <label>Professional Indemnity (Excess)</label>
+            </value>
+            <value>
+                <fullName>Professional Indemnity Insurance</fullName>
+                <default>false</default>
+                <label>Professional Indemnity Insurance</label>
+            </value>
+            <value>
+                <fullName>Rural Insurance</fullName>
+                <default>false</default>
+                <label>Rural Insurance</label>
+            </value>
+            <value>
+                <fullName>SF_BIZPACK</fullName>
+                <default>false</default>
+                <label>SF_BIZPACK</label>
+            </value>
+            <value>
+                <fullName>SF_COMMOTOR</fullName>
+                <default>false</default>
+                <label>SF_COMMOTOR</label>
+            </value>
+            <value>
+                <fullName>SF_HOME</fullName>
+                <default>false</default>
+                <label>SF_HOME</label>
+            </value>
+            <value>
+                <fullName>SF_ISR</fullName>
+                <default>false</default>
+                <label>SF_ISR</label>
+            </value>
+            <value>
+                <fullName>SF_LANDLORD</fullName>
+                <default>false</default>
+                <label>SF_LANDLORD</label>
+            </value>
+            <value>
+                <fullName>SF_LIABILITY</fullName>
+                <default>false</default>
+                <label>SF_LIABILITY</label>
+            </value>
+            <value>
+                <fullName>SF_MOTOR</fullName>
+                <default>false</default>
+                <label>SF_MOTOR</label>
+            </value>
+            <value>
+                <fullName>SF_PI</fullName>
+                <default>false</default>
+                <label>SF_PI</label>
+            </value>
+            <value>
+                <fullName>Statutory Liability</fullName>
+                <default>false</default>
+                <label>Statutory Liability</label>
+            </value>
+            <value>
+                <fullName>Strata (Commercial)</fullName>
+                <default>false</default>
+                <label>Strata (Commercial)</label>
+            </value>
+            <value>
+                <fullName>Strata (Domestic)</fullName>
+                <default>false</default>
+                <label>Strata (Domestic)</label>
+            </value>
+            <value>
+                <fullName>Surety Bond Insurance</fullName>
+                <default>false</default>
+                <label>Surety Bond Insurance</label>
+            </value>
+            <value>
+                <fullName>Tax Probe Insurance</fullName>
+                <default>false</default>
+                <label>Tax Probe Insurance</label>
+            </value>
+            <value>
+                <fullName>Terrorism</fullName>
+                <default>false</default>
+                <label>Terrorism</label>
+            </value>
+            <value>
+                <fullName>Trade Credit</fullName>
+                <default>false</default>
+                <label>Trade Credit</label>
+            </value>
+            <value>
+                <fullName>Trades Pack</fullName>
+                <default>false</default>
+                <label>Trades Pack</label>
+            </value>
+            <value>
+                <fullName>Transit</fullName>
+                <default>false</default>
+                <label>Transit</label>
+            </value>
+            <value>
+                <fullName>Travel Insurance (Corporate)</fullName>
+                <default>false</default>
+                <label>Travel Insurance (Corporate)</label>
+            </value>
+            <value>
+                <fullName>Travel Insurance (Leisure)</fullName>
+                <default>false</default>
+                <label>Travel Insurance (Leisure)</label>
+            </value>
+            <value>
+                <fullName>Voluntary Workers Group Personal Accident</fullName>
+                <default>false</default>
+                <label>Voluntary Workers Group Personal Accident</label>
+            </value>
+            <value>
+                <fullName>Workers Compensation</fullName>
+                <default>false</default>
+                <label>Workers Compensation</label>
+            </value>
+            <value>
+                <fullName>360S</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>360S</label>
+            </value>
+            <value>
+                <fullName>ALLI - ALLIANZ</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ALLI - ALLIANZ</label>
+            </value>
+            <value>
+                <fullName>Ag Guard Pty Ltd</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Ag Guard Pty Ltd</label>
+            </value>
+            <value>
+                <fullName>CALLIDEN - AU</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>CALLIDEN - AU</label>
+            </value>
+            <value>
+                <fullName>CALLIDEN - CALLIDEN</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>CALLIDEN - CALLIDEN</label>
+            </value>
+            <value>
+                <fullName>CALLIDENAG - CALLIDEN</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>CALLIDENAG - CALLIDEN</label>
+            </value>
+            <value>
+                <fullName>CGU - CGU</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>CGU - CGU</label>
+            </value>
+            <value>
+                <fullName>CHARTIS - CHARTIS</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>CHARTIS - CHARTIS</label>
+            </value>
+            <value>
+                <fullName>CLUB - ALLIANZ</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>CLUB - ALLIANZ</label>
+            </value>
+            <value>
+                <fullName>Chubb Insurance</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Chubb Insurance</label>
+            </value>
+            <value>
+                <fullName>GREATLAKES - CALIBRE</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>GREATLAKES - CALIBRE</label>
+            </value>
+            <value>
+                <fullName>GTICARGO</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>GTICARGO</label>
+            </value>
+            <value>
+                <fullName>GTICARRIER</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>GTICARRIER</label>
+            </value>
+            <value>
+                <fullName>Hutch Underwriting</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Hutch Underwriting</label>
+            </value>
+            <value>
+                <fullName>IBNA - ZURICH</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>IBNA - ZURICH</label>
+            </value>
+            <value>
+                <fullName>LUMLEY - LUMLEY</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>LUMLEY - LUMLEY</label>
+            </value>
+            <value>
+                <fullName>NTI - NTI</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>NTI - NTI</label>
+            </value>
+            <value>
+                <fullName>PRTCYB</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>PRTCYB</label>
+            </value>
+            <value>
+                <fullName>QBE - QBEMM</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>QBE - QBEMM</label>
+            </value>
+            <value>
+                <fullName>SGUAS</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>SGUAS</label>
+            </value>
+            <value>
+                <fullName>TravelCard</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>TravelCard</label>
+            </value>
+            <value>
+                <fullName>VERO - ROYALSUN</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>VERO - ROYALSUN</label>
+            </value>
+            <value>
+                <fullName>VERO - VERO</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>VERO - VERO</label>
+            </value>
+            <value>
+                <fullName>ZURI - ZURICH</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ZURI - ZURICH</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

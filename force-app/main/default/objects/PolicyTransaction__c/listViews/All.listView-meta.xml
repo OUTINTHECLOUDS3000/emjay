@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>Insight_Id__c</columns>
+    <columns>Locked__c</columns>
+    <columns>PolicyId__c</columns>
+    <columns>TransactionTypeId__c</columns>
+    <columns>TransactionTypeName__c</columns>
+    <columns>IsTakeUp__c</columns>
+    <columns>PolicyPeriodId__c</columns>
+    <columns>HoldingInsurer__c</columns>
+    <columns>InsurerCreditTermsDueDate__c</columns>
+    <columns>IsClosed__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All Records</label>
+</ListView>
