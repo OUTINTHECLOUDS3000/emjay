@@ -1,5 +1,17 @@
 @IsTest
 public class InsightPushEventListenerTest {
+    @TestSetup
+    static void setupTestData() {
+        // Create custom metadata record for testing
+        Integration_Settings__mdt setting = new Integration_Settings__mdt(
+            Label = 'Insight Integeration',
+            MasterLabel = 'Insight Integeration',
+            DeveloperName = 'Insight_Integeration',
+            QualifiedApiName='Insight_Integeration',
+            isActive__c = true
+        );
+        
+    }
     @IsTest
     static void testInsightPushEventListenerPolicy() {
         // Create a test request

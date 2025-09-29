@@ -1,5 +1,11 @@
 trigger SyncAccountToInsight on Account (after insert) {//, after update
     
+    // Check if trigger is active using Custom Metadata
+    Integration_Settings__mdt triggerSetting = Integration_Settings__mdt.getInstance('Account');
+    
+    // Only proceed if trigger is explicitly activated via custom metadata
+    if (triggerSetting != null && triggerSetting.isActive__c) {
+        
     // Do not run the logic again, if trigger is run from the batch class
     Set<Id> accountLstToSync = new Set<Id>();
     if(!System.IsBatch())
@@ -16,5 +22,10 @@ trigger SyncAccountToInsight on Account (after insert) {//, after update
     {
         SyncAccountToInsightAccountBatch batch = new SyncAccountToInsightAccountBatch(accountLstToSync,false);
         Database.executeBatch(batch, 1);
+    }
+        
+    } else {
+        System.debug('SyncAccountToInsight trigger bypassed - either no metadata record found or isActive__c is false');
+        return;
     }
 }
