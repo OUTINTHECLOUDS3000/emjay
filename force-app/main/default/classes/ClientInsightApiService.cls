@@ -3,6 +3,7 @@ public class ClientInsightApiService extends InsightApiServiceBase  implements I
     string serviceName;
     string accountId;
     Account client;
+    static LoggerUtility loggerObj;
     public ClientInsightApiService(String apiName,  string recordId) { 
         super(apiName); 
         serviceName = apiName;
@@ -28,6 +29,20 @@ public class ClientInsightApiService extends InsightApiServiceBase  implements I
             returnStatus = 'Success';
         }
         else{
+            Account acc = new Account();
+            acc.Id = accountId;
+            string errorResponse = response.getBody();
+            Map<String, Object> resultMap = (Map<String, Object>) JSON.deserializeUntyped(errorResponse);
+			Boolean isError = (Boolean) resultMap.get('IsError');
+			String errorCode = (String) resultMap.get('ErrorCode');
+			String errorMessage = (String) resultMap.get('ErrorMessage');
+             acc.Sync_Error__c = errorMessage;
+            if(errorMessage.contains('Entities may have been modified'))
+            {
+                acc.Sync_Error__c = 'Please click on Refresh Account button from the Hilghtlight Panel to sync from Insight.';
+            }
+            acc.Has_Sync_Error__c = true;
+            update acc;
             returnStatus = 'Failed';
         }
         return returnStatus;
@@ -108,6 +123,8 @@ public class ClientInsightApiService extends InsightApiServiceBase  implements I
         Account acc = new Account();
         acc.Id = accountId;
         acc.Insight_Id__c = insightId;
+        acc.Has_Sync_Error__c = false;
+        acc.Sync_Error__c = null;
         acc.Insight_Row_Version__c = String.ValueOf(clientMap.get('RowVersion'));
         acc.Insight_Created_Who__c = String.ValueOf(clientMap.get('CreatedWho'));
         acc.Insight_Created_When__c = String.ValueOf(clientMap.get('CreatedWhen'));
@@ -116,7 +133,9 @@ public class ClientInsightApiService extends InsightApiServiceBase  implements I
         acc.Get_JSON_Response__c = resonseBody;
         if(serviceName.toLowerCase() == 'get_client')
         {
-            
+            loggerObj = LoggerUtility.getLogger();
+            try
+            {
             acc.Trading_As__c = String.ValueOf(clientMap.get('TradingAs'));
             acc.Reference_Code__c = String.ValueOf(clientMap.get('Ref'));
             acc.ABN__c = String.ValueOf(clientMap.get('ABN'));
@@ -132,8 +151,17 @@ public class ClientInsightApiService extends InsightApiServiceBase  implements I
            // acc.Billingstate = String.ValueOf(clientMap.get('Suburb')); 
             acc.BillingpostalCode = String.ValueOf(clientMap.get('Postcode'));
             acc.Billingcountry = String.ValueOf(clientMap.get('CountryName'));
-            acc.BillingStateCode  = String.ValueOf(clientMap.get('StateName'));   
-            acc.Sic = String.ValueOf(clientMap.get('StandardIndustryCode'));
+            acc.BillingStateCode  = String.ValueOf(clientMap.get('StateName')); 
+            String strSIC = String.ValueOf(clientMap.get('StandardIndustryCode'));
+			if(strSIC!=null)
+			{
+                if(strSIC.contains('['))
+ 					acc.Sic =  strSIC.substringBetween('[', ']');
+                else
+                    acc.Sic =  strSIC;
+			}
+            acc.Standard_Industry_Code__c = strSIC;
+            acc.SicDesc  = String.ValueOf(clientMap.get('StandardIndustryCodeName'));
             acc.Compliance_Type__c = String.ValueOf(clientMap.get('ComplianceTypeName'));
             acc.Classification__c = String.ValueOf(clientMap.get('ClassificationName'));
             acc.Vulnerable_Client__c = String.ValueOf(clientMap.get('VulnerableClient'));
@@ -156,10 +184,21 @@ public class ClientInsightApiService extends InsightApiServiceBase  implements I
                 acc.Client_Category_1__c  = ReferenceMetadataUtility.getIdtoPicklistText('Client_Category_1', Integer.ValueOf(clientMap.get('Category1Id')));
             if(clientMap.get('Category3Id') != null)
                 acc.Client_Category_3__c  = ReferenceMetadataUtility.getIdtoPicklistText('Client_Category_3', Integer.ValueOf(clientMap.get('Category3Id')));
+       
+            update acc; 
+                 }
+         catch(Exception ex)
+        {
+            loggerObj.addErrorLog(ex);
         }
+        finally
+        {
+            loggerObj.relatedRecordId = accountId;
+			loggerObj.saveLogs();
+        }
+           
+    }
         
-        
-        update acc;
     }
     
     private InsightClientRequestWrapper mapAccountToRequestWrapper()
@@ -173,7 +212,7 @@ public class ClientInsightApiService extends InsightApiServiceBase  implements I
                                      Legal_Entity_Type__c, Sic,Insight_Id__c,Area__c,Sales_Team__c,Service_Team__c,
                                      Insight_Updated_Who__c, Insight_Updated_When__c,Get_JSON_Response__c,
                                      Client_Category_1__c,Client_Category_3__c,Account_Type__c,
-                                     BillingStreet, Billingcity, Billingstate, Billingcountry,BillingpostalCode,Current_State__c
+                                     BillingStreet, Billingcity, Billingstate,SicDesc, Billingcountry,BillingpostalCode,Current_State__c
                                      FROM Account
                                      WHERE Id = :accountId];
         
@@ -185,8 +224,11 @@ public class ClientInsightApiService extends InsightApiServiceBase  implements I
         {
             client = accountList[0];
             if(serviceName.toLowerCase() == 'update_client'){
-                payload = (InsightClientRequestWrapper) JSON.deserialize(client.Get_JSON_Response__c, InsightClientRequestWrapper.class);
-                clientRequest = payload.client;
+                if(client.Get_JSON_Response__c!=null)
+                {
+                	payload = (InsightClientRequestWrapper) JSON.deserialize(client.Get_JSON_Response__c, InsightClientRequestWrapper.class);
+                	clientRequest = payload.client;
+                }
             }
             // Map fields from Account to wrapper.Client
             clientRequest.Name = client.Name;
@@ -211,8 +253,7 @@ public class ClientInsightApiService extends InsightApiServiceBase  implements I
             clientRequest.Web = client.Website;
             clientRequest.BranchName = client.Branch__c;
             clientRequest.SalesTeamName = client.Owner.Name;
-            clientRequest.AnnualTurnover = client.Turnover_Estimated_next_12_months__c != null 
-                ? client.Turnover_Estimated_next_12_months__c.intValue() : null;
+            clientRequest.AnnualTurnover = client.Turnover_Estimated_next_12_months__c;
             clientRequest.ComplianceTypeName = client.Compliance_Type__c;
             clientRequest.ClassificationName = client.Classification__c;
             clientRequest.SalesTeamId = ReferenceMetadataUtility.mapPicklistToId('Sales_Team', client.Sales_Team__c);
@@ -237,6 +278,7 @@ public class ClientInsightApiService extends InsightApiServiceBase  implements I
                 : null;
             // Additional fields and relationships can be mapped similarly...
             clientRequest.StandardIndustryCode = client.Sic;
+            clientRequest.StandardIndustryCodeName  = client.SicDesc;
             payload.client = clientRequest;
         }
         return payload;
